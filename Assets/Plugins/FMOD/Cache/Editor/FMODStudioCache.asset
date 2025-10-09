@@ -1,0 +1,301 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8514818162921570881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/QuesPick Resources/FMOD/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638945887405203113
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8351447621037069834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Loading/Loading
+  m_EditorClassIdentifier: 
+  Path: event:/Loading/Loading
+  Guid:
+    Data1: -1314729240
+    Data2: 1096068542
+    Data3: 166772612
+    Data4: -1377421393
+  Banks:
+  - {fileID: 9100040454504344655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2289
+--- !u!114 &-7294039074221911539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Button_Hover
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Button_Hover
+  Guid:
+    Data1: 1912364595
+    Data2: 1143260769
+    Data3: 1307893927
+    Data4: 812715572
+  Banks:
+  - {fileID: -5268121193137585024}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 359
+--- !u!114 &-5268121193137585024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/QuesPick Resources/FMOD/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638945882700338682
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-5047818312725326200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Button_Click
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Button_Click
+  Guid:
+    Data1: -582122012
+    Data2: 1285981425
+    Data3: -1173409871
+    Data4: 1937794906
+  Banks:
+  - {fileID: -5268121193137585024}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 353
+--- !u!114 &-3753799810102985971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Loading/Logo_Appears
+  m_EditorClassIdentifier: 
+  Path: event:/Loading/Logo_Appears
+  Guid:
+    Data1: 2067896463
+    Data2: 1086719454
+    Data3: -1622083962
+    Data4: -652635880
+  Banks:
+  - {fileID: 9100040454504344655}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-760850423038822914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/QuesPick Resources/FMOD/Desktop/Player.bank
+  Name: Player
+  StudioPath: bank:/Player
+  lastModified: 638945887405618604
+  FileSizes: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 2012174052264834358}
+  - {fileID: 9100040454504344655}
+  - {fileID: -8514818162921570881}
+  - {fileID: -760850423038822914}
+  - {fileID: -5268121193137585024}
+  EditorEvents:
+  - {fileID: -3753799810102985971}
+  - {fileID: -8351447621037069834}
+  - {fileID: 4275086625904775364}
+  - {fileID: -7294039074221911539}
+  - {fileID: 6449981583325354309}
+  - {fileID: -5047818312725326200}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8514818162921570881}
+  StringsBanks:
+  - {fileID: 2012174052264834358}
+  cacheVersion: 131849
+  cacheTime: 638945887405618604
+  SerializableEventsDict:
+  - key: event:/Loading/Logo_Appears
+    index: 0
+  - key: event:/Loading/Loading
+    index: 1
+  - key: event:/SFX/Player/PlayerLaserMining
+    index: 2
+  - key: event:/SFX/UI/Button_Hover
+    index: 3
+  - key: event:/SFX/Player/PlayerSnowMove
+    index: 4
+  - key: event:/SFX/UI/Button_Click
+    index: 5
+--- !u!114 &2012174052264834358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/QuesPick Resources/FMOD/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638945887405213125
+  FileSizes:
+  - Name: 
+    Value: 1178
+  Exists: 1
+--- !u!114 &4275086625904775364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerLaserMining
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerLaserMining
+  Guid:
+    Data1: -1314183
+    Data2: 1234789879
+    Data3: 1088804505
+    Data4: -1721469881
+  Banks:
+  - {fileID: -760850423038822914}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2663
+--- !u!114 &6449981583325354309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Player/PlayerSnowMove
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Player/PlayerSnowMove
+  Guid:
+    Data1: -1877368775
+    Data2: 1128303351
+    Data3: 1578361734
+    Data4: 1373769309
+  Banks:
+  - {fileID: -5268121193137585024}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &9100040454504344655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Laoding.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/QuesPick Resources/FMOD/Desktop/Laoding.bank
+  Name: Laoding
+  StudioPath: bank:/Laoding
+  lastModified: 638914171481105148
+  FileSizes: []
+  Exists: 1

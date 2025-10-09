@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ac7532016f004b949a3d26052c94066f
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 204263
+  packageName: Pixel Art RPG VFX
+  packageVersion: 3.0
+  assetPath: Assets/Pixel Art/PixelArtRPGVFX/Animations/VFX_Controller.controller
+  uploadId: 644646

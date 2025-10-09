@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <!-- 스타일은 USS에서 관리하므로 여기서 제거 -->
+    <ui:VisualElement name="drop-area">
+        <ui:Label text="스크립터블 오브젝트를 이곳에 드롭하세요"/>
+    </ui:VisualElement>
+    
+    <!-- id 선택자를 사용하기 위해 name을 id로 변경 (권장) -->
+    <ui:VisualElement name="divider" />
+    
+    <ui:ScrollView name="content-container" />
+</ui:UXML>
