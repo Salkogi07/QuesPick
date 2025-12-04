@@ -11,7 +11,7 @@ public class Player_WalkState : Player_GroundedState
     {
         base.Update();
         
-        //player.Condition.StaminaRecovery();
+        player.Condition.StaminaRecovery();
         
         if (player.MoveInput == 0)
             playerStateMachine.ChangeState(player.IdleState);
@@ -21,7 +21,7 @@ public class Player_WalkState : Player_GroundedState
     {
         base.FixedUpdate();
         
-        //player.SetMoveSpeed(player.Stats.WalkSpeed);
+        player.SetMoveSpeed(player.Stats.WalkSpeed);
         player.SetVelocity(player.MoveInput * player.CurrentSpeed, rigidbody.linearVelocity.y);
     }
 

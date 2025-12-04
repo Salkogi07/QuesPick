@@ -179,6 +179,12 @@ GameObject:
   - component: {fileID: 2093785360371588388}
   - component: {fileID: 3255006627929712995}
   - component: {fileID: 2094093678723558631}
+  - component: {fileID: 4973521365087244072}
+  - component: {fileID: 5931061630262333485}
+  - component: {fileID: 7035390560572528832}
+  - component: {fileID: 5677424154355307562}
+  - component: {fileID: 3890464713785461863}
+  - component: {fileID: 1290190181424341335}
   m_Layer: 6
   m_Name: Normal_Crew
   m_TagString: Player
@@ -292,6 +298,129 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &4973521365087244072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069e8531f1ae66f4d959582e3442c669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WalkSpeed: 4
+  RunSpeed: 7
+  JumpForce: 13
+  SprintCost: 10
+  JumpCost: 15
+  StaminaRecoverRate: 15
+  staminaDecreaseRate: 10
+  MaxHp:
+    baseValue: 100
+    Modifiers: 
+  MaxStamina:
+    baseValue: 100
+    Modifiers: 
+  MaxWeight:
+    baseValue: 100
+    Modifiers: 
+  MaxTemperature:
+    baseValue: 100
+    Modifiers: 
+  Mining:
+    baseValue: 100
+    Modifiers: 
+  Damage:
+    baseValue: 100
+    Modifiers: 
+  Armor:
+    baseValue: 0
+    Modifiers: 
+  Lagging:
+    baseValue: 0
+    Modifiers: 
+--- !u!114 &5931061630262333485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7879639999902043af06f33f1d5fa67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  knockbackDuration: 0.2
+  KnockbackPower: {x: 1.5, y: 2.5}
+  heavyKnockbackpower: {x: 7, y: 7}
+  heavyKnockbackDuration: 0.5
+  heavyDamageThreshold: 0.3
+  temperatureDropRate: 1
+  frozenHpDropRate: 2
+  staminaRegenDelay: 1.5
+--- !u!114 &7035390560572528832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8360229d1327716498e7eb739a6d0525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerObject: {fileID: 6627346968656088041}
+  inAirMoveMultiplier: 0.7
+  groundCheck: {fileID: 6888678176120883945}
+  groundCheckSize: {x: 0.3, y: 0.1}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+--- !u!114 &5677424154355307562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703688e1914c93a4c94096283d8a1f06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &3890464713785461863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e01ca75ee167c3428e0cc85a7a88e83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+--- !u!114 &1290190181424341335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3867197236472526811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710aaf739e5db444888b5cbd6e771cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  nameText: {fileID: 7048437721639184899}
 --- !u!1 &6627346968656088041
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,11 @@ public class Player_JumpState : Player_AiredState
     public override void Enter()
     {
         base.Enter();
-        //player.Condition.UseStaminaToJump();
+        player.Condition.UseStaminaToJump();
         
         float horizontalVelocity = player.MoveInput * player.CurrentSpeed;
 
-        player.SetVelocity(horizontalVelocity, player.JumpForce);
+        player.SetVelocity(horizontalVelocity, player.Stats.JumpForce);
     }
 
     public override void Update()

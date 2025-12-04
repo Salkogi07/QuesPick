@@ -11,7 +11,7 @@ public class Player_FallState : Player_AiredState
     {
         base.Update();
 
-        //player.Condition.StaminaRecovery();
+        player.Condition.StaminaRecovery();
 
         if (player.IsGroundDetected)
             playerStateMachine.ChangeState(player.IdleState);

@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: 8fa37f40cd29d904ebe53fe2b4f713c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5838251696322298733
+    second: cold_reminder2_0
+  - first:
+      213: 8362168834725055090
+    second: cold_reminder2_1
+  - first:
+      213: 7320523790894301161
+    second: cold_reminder2_2
+  - first:
+      213: 3973675843629115507
+    second: cold_reminder2_3
+  - first:
+      213: 9050913976284894990
+    second: cold_reminder2_4
+  - first:
+      213: 1769858608850793152
+    second: cold_reminder2_5
+  - first:
+      213: -8889837431060347676
+    second: cold_reminder2_6
+  - first:
+      213: 639438664220692741
+    second: cold_reminder2_7
+  - first:
+      213: -8663609885873393323
+    second: cold_reminder2_8
+  - first:
+      213: 1918185426422490041
+    second: cold_reminder2_9
+  - first:
+      213: -306560178615305611
+    second: cold_reminder2_10
+  - first:
+      213: 8565304415318527165
+    second: cold_reminder2_11
+  - first:
+      213: -436848272674859736
+    second: cold_reminder2_12
+  - first:
+      213: 2745324333138857869
+    second: cold_reminder2_13
+  - first:
+      213: 1405083834025058766
+    second: cold_reminder2_14
+  - first:
+      213: -3403704056981373815
+    second: cold_reminder2_15
+  - first:
+      213: -4577051719857198666
+    second: cold_reminder2_16
+  - first:
+      213: -3770353676187015527
+    second: cold_reminder2_17
+  - first:
+      213: -1350324454854478252
+    second: cold_reminder2_18
+  - first:
+      213: -3128652020135988300
+    second: cold_reminder2_19
+  - first:
+      213: 3879187872060351703
+    second: cold_reminder2_20
+  - first:
+      213: -48113984970675120
+    second: cold_reminder2_21
+  - first:
+      213: -5034690943139073358
+    second: cold_reminder2_22
+  - first:
+      213: 146151085987361623
+    second: cold_reminder2_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cold_reminder2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63cc944cf2a50150800000000000000
+      internalID: 5838251696322298733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 99
+        width: 29
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a01a120446c0470800000000000000
+      internalID: 8362168834725055090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_2
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 101
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9effc0e1a99b79560800000000000000
+      internalID: 7320523790894301161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_3
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 100
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37860185025552730800000000000000
+      internalID: 3973675843629115507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 100
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e075411ce4e4b9d70800000000000000
+      internalID: 9050913976284894990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 102
+        width: 14
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2f733170dcf8810800000000000000
+      internalID: 1769858608850793152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_6
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 100
+        width: 42
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e44da2f4f3f0a480800000000000000
+      internalID: -8889837431060347676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_7
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 98
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5015684c31ebfd800800000000000000
+      internalID: 639438664220692741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 9
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55134f7e5bca4c780800000000000000
+      internalID: -8663609885873393323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_9
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 83
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b36e3b7b73ce9a10800000000000000
+      internalID: 1918185426422490041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57aba5b4421eebbf0800000000000000
+      internalID: -306560178615305611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_11
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 63
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc452c1cf21ed670800000000000000
+      internalID: 8565304415318527165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_12
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 39
+        width: 8
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 825d87e7fc000f9f0800000000000000
+      internalID: -436848272674859736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 44
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f4af58fe9591620800000000000000
+      internalID: 2745324333138857869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec125b67d4cdf7310800000000000000
+      internalID: 1405083834025058766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_15
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 27
+        width: 8
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98cb11b913d93c0d0800000000000000
+      internalID: -3403704056981373815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9225706bb0b70c0800000000000000
+      internalID: -4577051719857198666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_17
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 17
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 996e845ce430dabc0800000000000000
+      internalID: -3770353676187015527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_18
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 22
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45630e8001fa24de0800000000000000
+      internalID: -1350324454854478252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_19
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 20
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b37cf1609bc494d0800000000000000
+      internalID: -3128652020135988300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_20
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 0
+        width: 28
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d4292b11d4a5d530800000000000000
+      internalID: 3879187872060351703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_21
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 0
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05c2819e590155ff0800000000000000
+      internalID: -48113984970675120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2b15c134f212ab0800000000000000
+      internalID: -5034690943139073358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cold_reminder2_23
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 0
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75370db63ab370200800000000000000
+      internalID: 146151085987361623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      cold_reminder2_0: 5838251696322298733
+      cold_reminder2_1: 8362168834725055090
+      cold_reminder2_10: -306560178615305611
+      cold_reminder2_11: 8565304415318527165
+      cold_reminder2_12: -436848272674859736
+      cold_reminder2_13: 2745324333138857869
+      cold_reminder2_14: 1405083834025058766
+      cold_reminder2_15: -3403704056981373815
+      cold_reminder2_16: -4577051719857198666
+      cold_reminder2_17: -3770353676187015527
+      cold_reminder2_18: -1350324454854478252
+      cold_reminder2_19: -3128652020135988300
+      cold_reminder2_2: 7320523790894301161
+      cold_reminder2_20: 3879187872060351703
+      cold_reminder2_21: -48113984970675120
+      cold_reminder2_22: -5034690943139073358
+      cold_reminder2_23: 146151085987361623
+      cold_reminder2_3: 3973675843629115507
+      cold_reminder2_4: 9050913976284894990
+      cold_reminder2_5: 1769858608850793152
+      cold_reminder2_6: -8889837431060347676
+      cold_reminder2_7: 639438664220692741
+      cold_reminder2_8: -8663609885873393323
+      cold_reminder2_9: 1918185426422490041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

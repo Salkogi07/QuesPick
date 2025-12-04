@@ -17,7 +17,7 @@ public class Player_IdleState : Player_GroundedState
     {
         base.Update();
             
-        //player.Condition.StaminaRecovery();
+        player.Condition.StaminaRecovery();
             
         if (player.MoveInput != 0)
             playerStateMachine.ChangeState(player.WalkState);
