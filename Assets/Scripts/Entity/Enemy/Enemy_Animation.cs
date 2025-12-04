@@ -2,6 +2,9 @@ using UnityEngine;
 
 public abstract class Enemy_Animation
 {
+
+    protected Animator anim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
