@@ -362,15 +362,15 @@ MonoBehaviour:
     HasValue: 0
   displaySortOrder: 0
   childIdentifiers:
-  - 46fbfdf3fc43db0458918377fd40293e
-  - de700ef3f37a49b58a57ae3addf01ad9
-  - fd7c55dab0fce234b8c25f6ffca523c1
   - 2fea114e74ecf3c4f920e1d5cc1c4c40
-  - c88d16e5272a4e241b0ef0ac2e53b73d
-  - e7a046c753c3c3d4aacc91f6597f310d
-  - b7716510a1f36934c87976f3a81dbf3d
-  - 0f8eb3f400726694eb47beb1a9f94ce8
+  - 46fbfdf3fc43db0458918377fd40293e
   - 2c5177b11d81d824dbb064f9ac8527da
+  - c88d16e5272a4e241b0ef0ac2e53b73d
+  - fd7c55dab0fce234b8c25f6ffca523c1
+  - b7716510a1f36934c87976f3a81dbf3d
+  - de700ef3f37a49b58a57ae3addf01ad9
+  - e7a046c753c3c3d4aacc91f6597f310d
+  - 0f8eb3f400726694eb47beb1a9f94ce8
   - 52eb9df5db46521439908db3a29a1bbb
   codecChannels:
     Value: []
@@ -632,12 +632,8 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks:
-  - Master
-  Banks:
-  - Laoding
-  - Player
-  - SFX
+  MasterBanks: []
+  Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
@@ -653,17 +649,17 @@ MonoBehaviour:
   HideSetupWizard: 1
   LastEventReferenceScanVersion: 131849
   Platforms:
-  - {fileID: -3088492210753755714}
-  - {fileID: -4877691304404589084}
-  - {fileID: -8463046301818646364}
-  - {fileID: 583926081441894104}
-  - {fileID: -1112917767495606343}
   - {fileID: -9154096369238593705}
-  - {fileID: -5504976753226255001}
-  - {fileID: 3872483973604638267}
-  - {fileID: -132664216654030222}
-  - {fileID: 5277822413671435646}
+  - {fileID: -8463046301818646364}
   - {fileID: -7801632212093568317}
+  - {fileID: -5504976753226255001}
+  - {fileID: -4877691304404589084}
+  - {fileID: -3088492210753755714}
+  - {fileID: -1112917767495606343}
+  - {fileID: -132664216654030222}
+  - {fileID: 583926081441894104}
+  - {fileID: 3872483973604638267}
+  - {fileID: 5277822413671435646}
   - {fileID: 8428201544936067706}
   MigratedPlatforms: 09000000080000000b0000000a00000012000000060000000c0000000500000000000000150000000200000001000000
 --- !u!114 &583926081441894104
