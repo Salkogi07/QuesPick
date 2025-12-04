@@ -20,5 +20,10 @@ public class Player_AiredState : PlayerState
 
         if (player.MoveInput != 0)
             player.SetVelocity(xVelocity, rigidbody.linearVelocity.y);
+        
+        if (rigidbody.linearVelocity.y < -player.MaxFallSpeed)
+        {
+            rigidbody.linearVelocity = new Vector2(rigidbody.linearVelocity.x, -player.MaxFallSpeed);
+        }
     }
 }

@@ -11,8 +11,9 @@ public class Player_JumpState : Player_AiredState
         base.Enter();
         player.Condition.UseStaminaToJump();
         
+        player.CoyoteTimeCounter = 0; 
+        
         float horizontalVelocity = player.MoveInput * player.CurrentSpeed;
-
         player.SetVelocity(horizontalVelocity, player.Stats.JumpForce);
     }
 

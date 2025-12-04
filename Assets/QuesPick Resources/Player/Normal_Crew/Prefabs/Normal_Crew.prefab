@@ -374,8 +374,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8360229d1327716498e7eb739a6d0525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   PlayerObject: {fileID: 6627346968656088041}
   inAirMoveMultiplier: 0.7
+  JumpBufferTime: 0.1
+  CoyoteTime: 0.1
+  MaxFallSpeed: 20
   groundCheck: {fileID: 6888678176120883945}
   groundCheckSize: {x: 0.3, y: 0.1}
   whatIsGround:
