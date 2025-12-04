@@ -22,25 +22,21 @@ public abstract class PlayerState
 
     public virtual void Enter()
     {
-        if(player.IsOwner)
-            anim.SetBool(animBoolName, true);
+        anim.SetBool(animBoolName, true);
     }
 
     public virtual void Update()
     {
-        if(player.IsOwner)
-            anim.SetFloat("yVelocity", rigidbody.linearVelocity.y);
+        anim.SetFloat("yVelocity", rigidbody.linearVelocity.y);
     }
 
     public virtual void FixedUpdate()
     {
-        if(player.IsOwner)
-            anim.SetFloat("yVelocity", rigidbody.linearVelocity.y);
+        anim.SetFloat("yVelocity", rigidbody.linearVelocity.y);
     }
 
     public virtual void Exit()
     {
-        if(player.IsOwner)
-            anim.SetBool(animBoolName, false);
+        anim.SetBool(animBoolName, false);
     }
 }

@@ -8,7 +8,7 @@ public class Entity : NetworkBehaviour
     public Rigidbody2D rb { get; private set; }
 
     private Coroutine KnockbackCo;
-    protected bool isknocked;
+    protected bool isknocked = false;
 
     protected virtual void Awake()
     {

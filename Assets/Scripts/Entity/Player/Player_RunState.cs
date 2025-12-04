@@ -10,18 +10,18 @@ public class Player_RunState : Player_GroundedState
     public override void Enter()
     {
         base.Enter();
-        //player.Condition.SetSprintingStatus(true); // 달리기 시작을 알립니다.
+        player.Condition.SetSprintingStatus(true); // 달리기 시작을 알립니다.
     }
 
     public override void Exit()
     {
         base.Exit();
-        //player.Condition.SetSprintingStatus(false); // 달리기가 끝났음을 알립니다.
+        player.Condition.SetSprintingStatus(false); // 달리기가 끝났음을 알립니다.
     }
     
     public override void Update()
     {
-        //player.Condition.UseStaminaToSprint();
+        player.Condition.UseStaminaToSprint();
 
         if (player.MoveInput == 0)
         {
@@ -35,11 +35,11 @@ public class Player_RunState : Player_GroundedState
             return;
         }
 
-        /*if (player.Condition.Stamina <= 0)
+        if (player.Condition.Stamina <= 0)
         {
             playerStateMachine.ChangeState(player.WalkState);
             return;
-        }*/
+        }
         
         base.Update();
     }
@@ -48,7 +48,7 @@ public class Player_RunState : Player_GroundedState
     {
         base.FixedUpdate();
             
-        //player.SetMoveSpeed(player.Stats.RunSpeed);
+        player.SetMoveSpeed(player.Stats.RunSpeed);
         player.SetVelocity(player.MoveInput * player.CurrentSpeed, rigidbody.linearVelocity.y);
     }
 }

@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Item
   - Enemy
-  - monster
   - PlayerPrecenters
   - Mining_Tile
   - Ladder
@@ -19,7 +18,7 @@ TagManager:
   - Ground
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 
