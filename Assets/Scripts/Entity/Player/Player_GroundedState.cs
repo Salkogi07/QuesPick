@@ -23,13 +23,16 @@ public class Player_GroundedState : PlayerState
         }
 
         if (rigidbody.linearVelocity.y < 0)
+        {
             playerStateMachine.ChangeState(player.FallState);
+            return;
+        }
 
         if (player.Condition.CanSprint())
             if (Input.GetKey(KeyManager.instance.GetKeyCodeByName("Sprint")) && player.MoveInput != 0)
                 playerStateMachine.ChangeState(player.RunState);
 
-        if (Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump")))
+        if (player.IsGroundDetected && Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump")))
             playerStateMachine.ChangeState(player.JumpState);
     }
 }
