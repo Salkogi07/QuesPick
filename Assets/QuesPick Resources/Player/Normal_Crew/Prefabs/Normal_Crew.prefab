@@ -311,8 +311,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069e8531f1ae66f4d959582e3442c669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 4
+  WalkSpeed: 4.5
   RunSpeed: 7
+  CrouchSpeed: 2
   JumpForce: 13
   SprintCost: 7
   JumpCost: 12
@@ -378,7 +379,6 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   PlayerObject: {fileID: 6627346968656088041}
   inAirMoveMultiplier: 0.9
-  CrouchMoveSpeed: 3
   CrouchColliderSize: {x: 0.5, y: 0.85}
   CrouchColliderOffset: {x: 0, y: -0.185}
   OriginalColliderSize: {x: 0, y: 0}

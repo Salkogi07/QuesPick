@@ -6,6 +6,7 @@ public class Player_Stats : MonoBehaviour
     [Header("Move Info")]
     public float WalkSpeed;
     public float RunSpeed;
+    public float CrouchSpeed;
     public float JumpForce;
 
     [Header("Stamina Info")] 

@@ -27,7 +27,6 @@ public class Player : Entity
     private bool _isFacingRight = false;
     
     [Header("Crouch Settings")]
-    public float CrouchMoveSpeed = 3f;
     public Vector2 CrouchColliderSize = new Vector2(0.8f, 0.9f);
     public Vector2 CrouchColliderOffset = new Vector2(0f, -0.45f);
     [HideInInspector] public Vector2 OriginalColliderSize;

@@ -28,7 +28,7 @@ public class Player_GroundedState : PlayerState
             return;
         }
         
-        if (player.IsCrouchHeld)
+        if (player.IsCrouchHeld && !player.IsSprintHeld)
         {
             // 이동 중이면 CrouchMove, 멈춰있으면 CrouchIdle
             if (player.MoveInput != 0)

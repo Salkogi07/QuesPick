@@ -67,7 +67,7 @@ public class Player_CrouchMoveState : Player_GroundedState
     public override void FixedUpdate()
     {
         // 웅크리기 속도로 이동
-        player.SetMoveSpeed(player.CrouchMoveSpeed);
+        player.SetMoveSpeed(player.Stats.CrouchSpeed);
         player.SetVelocity(player.MoveInput * player.CurrentSpeed, rigidbody.linearVelocity.y);
     }
 }
