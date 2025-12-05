@@ -6,6 +6,7 @@ public class Player : Entity
     public ParticleSystem Dust { get; private set; }
     public Player_Condition Condition { get; private set; }
     public Player_Stats Stats { get; private set; }
+    public CapsuleCollider2D Collider { get; private set; }
     public GameObject PlayerObject;
     
     // State Machine
@@ -16,12 +17,24 @@ public class Player : Entity
     public Player_JumpState JumpState { get; private set; }
     public Player_FallState FallState { get; private set; }
     public Player_DeathState DeathState { get; private set; }
+    public Player_CrouchIdleState CrouchIdleState { get; private set; }
+    public Player_CrouchMoveState CrouchMoveState { get; private set; }
 
     [Header("Movement Settings")] 
     public float CurrentSpeed { get; private set; }
     [Range(0, 1)] public float inAirMoveMultiplier = 0.7f;
     public int FacingDirection { get; private set; } = -1;
     private bool _isFacingRight = false;
+    
+    [Header("Crouch Settings")]
+    public float CrouchMoveSpeed = 3f;
+    public Vector2 CrouchColliderSize = new Vector2(0.8f, 0.9f);
+    public Vector2 CrouchColliderOffset = new Vector2(0f, -0.45f);
+    [HideInInspector] public Vector2 OriginalColliderSize;
+    [HideInInspector] public Vector2 OriginalColliderOffset;
+    
+    [SerializeField] private Transform ceilingCheck;
+    [SerializeField] private float ceilingCheckRadius = 0.2f;
 
     [Header("Jump Settings & Timers")]
     public float JumpBufferTime = 0.2f;
@@ -40,12 +53,14 @@ public class Player : Entity
     [SerializeField] private Vector2 groundCheckSize = new Vector2(1f, 0.1f);
     [SerializeField] private LayerMask whatIsGround;
     public bool IsGroundDetected { get; private set; }
+    public bool IsCeilingDetected { get; private set; }
 
     // Input Variables
     public float MoveInput { get; private set; }
     public bool IsJumpPressed { get; private set; }
     public bool IsJumpReleased { get; private set; }
     public bool IsSprintHeld { get; private set; }
+    public bool IsCrouchHeld { get; private set; }
 
     private KeyCode _lastXKey = KeyCode.None;
 
@@ -56,6 +71,14 @@ public class Player : Entity
         Dust = GetComponentInChildren<ParticleSystem>();
         Condition = GetComponent<Player_Condition>();
         Stats = GetComponent<Player_Stats>();
+        Collider = GetComponent<CapsuleCollider2D>();
+        
+        // 원래 콜라이더 사이즈 저장
+        if (Collider != null)
+        {
+            OriginalColliderSize = Collider.size;
+            OriginalColliderOffset = Collider.offset;
+        }
 
         StateMachine = new Player_StateMachine();
 
@@ -65,6 +88,8 @@ public class Player : Entity
         JumpState = new Player_JumpState(this, StateMachine, "jumpFall");
         FallState = new Player_FallState(this, StateMachine, "jumpFall");
         DeathState = new Player_DeathState(this, StateMachine, "death");
+        CrouchIdleState = new Player_CrouchIdleState(this, StateMachine, "crouchIdle");
+        CrouchMoveState = new Player_CrouchMoveState(this, StateMachine, "crouchMove");
     }
 
     private void Start()
@@ -111,6 +136,7 @@ public class Player : Entity
         IsJumpPressed = Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump"));
         IsJumpReleased = Input.GetKeyUp(KeyManager.instance.GetKeyCodeByName("Jump"));
         IsSprintHeld = Input.GetKey(KeyManager.instance.GetKeyCodeByName("Sprint"));
+        IsCrouchHeld = Input.GetKey(KeyManager.instance.GetKeyCodeByName("Crouch")); 
     }
 
     // [코요테 타임 및 점프 버퍼 로직]
@@ -159,13 +185,25 @@ public class Player : Entity
 
     private void CheckCollision()
     {
-        IsGroundDetected = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, whatIsGround);
+        if(groundCheck != null)
+            IsGroundDetected = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, whatIsGround);
+        
+        if(ceilingCheck != null)
+            IsCeilingDetected = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, whatIsGround);
     }
 
     private void OnDrawGizmos()
     {
-        if(groundCheck == null) return;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
+        
+        if(ceilingCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(ceilingCheck.position, ceilingCheckRadius);
+        }
     }
 }
