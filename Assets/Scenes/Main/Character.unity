@@ -7225,11 +7225,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5803372810821648573, guid: 19b02c871166adc48992e915e2554356, type: 3}
       propertyPath: keyName
-      value: Ladder Move Down
+      value: Crouch
       objectReference: {fileID: 0}
     - target: {fileID: 6351383885514164578, guid: 19b02c871166adc48992e915e2554356, type: 3}
       propertyPath: m_Name
-      value: Ladder Move Down
+      value: Crouch
       objectReference: {fileID: 0}
     - target: {fileID: 7215720939812296226, guid: 19b02c871166adc48992e915e2554356, type: 3}
       propertyPath: m_Pivot.x
@@ -8674,7 +8674,7 @@ MonoBehaviour:
   - keyName: Ladder Move Up
     defaultKey: 119
     keyUI: {fileID: 2013097217}
-  - keyName: Ladder Move Down
+  - keyName: Crouch
     defaultKey: 115
     keyUI: {fileID: 1062539933}
   - keyName: Jump

@@ -1,39 +1,67 @@
-using FMOD.Studio;
 using UnityEngine;
-using Unity.Netcode;
 
 public class Player : Entity
 {
+    [Header("Components")]
     public ParticleSystem Dust { get; private set; }
+    public Player_Condition Condition { get; private set; }
+    public Player_Stats Stats { get; private set; }
+    public CapsuleCollider2D Collider { get; private set; }
+    public GameObject PlayerObject;
     
+    // State Machine
+    public Player_StateMachine StateMachine { get; private set; }
     public Player_IdleState IdleState { get; private set; }
     public Player_WalkState WalkState { get; private set; }
     public Player_RunState RunState { get; private set; }
     public Player_JumpState JumpState { get; private set; }
     public Player_FallState FallState { get; private set; }
     public Player_DeathState DeathState { get; private set; }
+    public Player_CrouchIdleState CrouchIdleState { get; private set; }
+    public Player_CrouchMoveState CrouchMoveState { get; private set; }
 
-    private Player_StateMachine _playerStateMachine;
-    public Player_Condition Condition { get; private set; }
-    public Player_Stats Stats { get; private set; }
-    public GameObject PlayerObject;
-
-    [Header("Movement details")] 
+    [Header("Movement Settings")] 
     public float CurrentSpeed { get; private set; }
-
-    [Range(0, 1)] public float inAirMoveMultiplier = .7f;
-    private bool _isFacingRight = false;
+    [Range(0, 1)] public float inAirMoveMultiplier = 0.7f;
     public int FacingDirection { get; private set; } = -1;
+    private bool _isFacingRight = false;
+    
+    [Header("Crouch Settings")]
+    public Vector2 CrouchColliderSize = new Vector2(0.8f, 0.9f);
+    public Vector2 CrouchColliderOffset = new Vector2(0f, -0.45f);
+    [HideInInspector] public Vector2 OriginalColliderSize;
+    [HideInInspector] public Vector2 OriginalColliderOffset;
+    
+    [SerializeField] private Transform ceilingCheck;
+    [SerializeField] private float ceilingCheckRadius = 0.2f;
 
-    private KeyCode _lastKey = KeyCode.None;
-    public float MoveInput { get; private set; } = 0f;
+    [Header("Jump Settings & Timers")]
+    public float JumpBufferTime = 0.2f;
+    
+    // [코요테 타임 설정]
+    public float CoyoteTime = 0.2f; // 플랫폼에서 떨어진 뒤 점프 가능한 시간
+    public float CoyoteTimeCounter { get; set; }
 
-    [Header("Collision detection")] 
+    // [낙하 속도 제한 설정]
+    public float MaxFallSpeed = 20f; // 최대 낙하 속도
+
+    public float JumpBufferCounter { get; set; }
+
+    [Header("Collision Info")] 
     [SerializeField] private Transform groundCheck;
-
     [SerializeField] private Vector2 groundCheckSize = new Vector2(1f, 0.1f);
     [SerializeField] private LayerMask whatIsGround;
     public bool IsGroundDetected { get; private set; }
+    public bool IsCeilingDetected { get; private set; }
+
+    // Input Variables
+    public float MoveInput { get; private set; }
+    public bool IsJumpPressed { get; private set; }
+    public bool IsJumpReleased { get; private set; }
+    public bool IsSprintHeld { get; private set; }
+    public bool IsCrouchHeld { get; private set; }
+
+    private KeyCode _lastXKey = KeyCode.None;
 
     protected override void Awake()
     {
@@ -42,115 +70,139 @@ public class Player : Entity
         Dust = GetComponentInChildren<ParticleSystem>();
         Condition = GetComponent<Player_Condition>();
         Stats = GetComponent<Player_Stats>();
+        Collider = GetComponent<CapsuleCollider2D>();
+        
+        // 원래 콜라이더 사이즈 저장
+        if (Collider != null)
+        {
+            OriginalColliderSize = Collider.size;
+            OriginalColliderOffset = Collider.offset;
+        }
 
-        _playerStateMachine = new Player_StateMachine();
+        StateMachine = new Player_StateMachine();
 
-        IdleState = new Player_IdleState(this, _playerStateMachine, "idle");
-        WalkState = new Player_WalkState(this, _playerStateMachine, "walk");
-        RunState = new Player_RunState(this, _playerStateMachine, "run");
-        JumpState = new Player_JumpState(this, _playerStateMachine, "jumpFall");
-        FallState = new Player_FallState(this, _playerStateMachine, "jumpFall");
-        DeathState = new Player_DeathState(this, _playerStateMachine, "death");
+        IdleState = new Player_IdleState(this, StateMachine, "idle");
+        WalkState = new Player_WalkState(this, StateMachine, "walk");
+        RunState = new Player_RunState(this, StateMachine, "run");
+        JumpState = new Player_JumpState(this, StateMachine, "jumpFall");
+        FallState = new Player_FallState(this, StateMachine, "jumpFall");
+        DeathState = new Player_DeathState(this, StateMachine, "death");
+        CrouchIdleState = new Player_CrouchIdleState(this, StateMachine, "crouchIdle");
+        CrouchMoveState = new Player_CrouchMoveState(this, StateMachine, "crouchMove");
     }
 
     private void Start()
     {
-        _playerStateMachine.Initialize(IdleState);
+        StateMachine.Initialize(IdleState);
     }
 
     private void Update()
     {
         if (isknocked) return;
-        ProcessKeyboardInput();
+
+        HandleInput();
+        UpdateJumpTimers(); // 타이머 갱신 (코요테 타임 계산)
         
-        _playerStateMachine.UpdateActiveState();
+        StateMachine.UpdateActiveState();
     }
     
     private void FixedUpdate()
     {
-        HandleCollisionDetection();
-        
-        if (isknocked)
-            return;
-
-        _playerStateMachine.FiexedUpdateActiveState();
+        CheckCollision();
+        if (isknocked) return;
+        StateMachine.FiexedUpdateActiveState();
     }
 
-    private void ProcessKeyboardInput()
+    private void HandleInput()
     {
         KeyCode leftKey = KeyManager.instance.GetKeyCodeByName("Move Left");
         KeyCode rightKey = KeyManager.instance.GetKeyCodeByName("Move Right");
 
-        // 마지막으로 누른 키 저장
-        if (Input.GetKeyDown(leftKey)) _lastKey = leftKey;
-        if (Input.GetKeyDown(rightKey)) _lastKey = rightKey;
+        if (Input.GetKeyDown(leftKey)) _lastXKey = leftKey;
+        if (Input.GetKeyDown(rightKey)) _lastXKey = rightKey;
 
-        // 현재 눌려 있는 키 확인
         bool isLeftHeld = Input.GetKey(leftKey);
         bool isRightHeld = Input.GetKey(rightKey);
 
         MoveInput = 0;
-
         if (isLeftHeld && isRightHeld)
-        {
-            // 둘 다 눌린 경우는 마지막 누른 키 우선
-            if (_lastKey == leftKey)
-                MoveInput = -1;
-            else if (_lastKey == rightKey)
-                MoveInput = 1;
-        }
+            MoveInput = (_lastXKey == leftKey) ? -1 : 1;
         else if (isLeftHeld)
-        {
             MoveInput = -1;
-        }
         else if (isRightHeld)
-        {
             MoveInput = 1;
-        }
+
+        IsJumpPressed = Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump"));
+        IsJumpReleased = Input.GetKeyUp(KeyManager.instance.GetKeyCodeByName("Jump"));
+        IsSprintHeld = Input.GetKey(KeyManager.instance.GetKeyCodeByName("Sprint"));
+        IsCrouchHeld = Input.GetKey(KeyManager.instance.GetKeyCodeByName("Crouch")); 
+    }
+
+    // [코요테 타임 및 점프 버퍼 로직]
+    private void UpdateJumpTimers()
+    {
+        // 땅에 있으면 코요테 타임 충전, 공중에 있으면 시간 감소
+        if (IsGroundDetected)
+            CoyoteTimeCounter = CoyoteTime;
+        else
+            CoyoteTimeCounter -= Time.deltaTime;
+
+        // 점프 선입력(Buffer) 처리
+        if (IsJumpPressed)
+            JumpBufferCounter = JumpBufferTime;
+        else
+            JumpBufferCounter -= Time.deltaTime;
     }
 
     public void SetVelocity(float xVelocity, float yVelocity)
     {
-        if (isknocked)
-            return;
+        if (isknocked) return;
         
         rb.linearVelocity = new Vector2(xVelocity, yVelocity);
         CheckAndFlip(xVelocity);
     }
 
-    public void CheckAndFlip(float xDirection)
+    public void SetMoveSpeed(float speed) => CurrentSpeed = speed;
+
+    private void CheckAndFlip(float xVelocity)
     {
-        if (xDirection > 0 && !_isFacingRight)
-            Flip();
-        else if (xDirection < 0 && _isFacingRight)
-            Flip();
+        if (xVelocity > 0 && !_isFacingRight) Flip();
+        else if (xVelocity < 0 && _isFacingRight) Flip();
     }
 
     private void Flip()
     {
-        if (IsGroundDetected)
-            Dust.Play();
+        if (IsGroundDetected) Dust.Play();
 
         Vector2 currentScale = PlayerObject.transform.localScale;
         currentScale.x *= -1;
         PlayerObject.transform.localScale = currentScale;
+        
         _isFacingRight = !_isFacingRight;
         FacingDirection *= -1;
     }
 
-    private void HandleCollisionDetection()
+    private void CheckCollision()
     {
-        IsGroundDetected = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, whatIsGround);
-    }
-
-    public void SetMoveSpeed(float speed)
-    {
-        CurrentSpeed = speed;
+        if(groundCheck != null)
+            IsGroundDetected = Physics2D.OverlapBox(groundCheck.position, groundCheckSize, 0f, whatIsGround);
+        
+        if(ceilingCheck != null)
+            IsCeilingDetected = Physics2D.OverlapCircle(ceilingCheck.position, ceilingCheckRadius, whatIsGround);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
+        
+        if(ceilingCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(ceilingCheck.position, ceilingCheckRadius);
+        }
     }
 }

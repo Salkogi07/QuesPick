@@ -29,6 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7240635460778005447}
   - {fileID: 6888678176120883945}
   - {fileID: 3830037776627040223}
   - {fileID: 5239020522990727974}
@@ -310,11 +311,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069e8531f1ae66f4d959582e3442c669, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 4
+  WalkSpeed: 4.5
   RunSpeed: 7
+  CrouchSpeed: 2
   JumpForce: 13
-  SprintCost: 10
-  JumpCost: 15
+  SprintCost: 7
+  JumpCost: 12
   StaminaRecoverRate: 15
   staminaDecreaseRate: 10
   MaxHp:
@@ -359,7 +361,7 @@ MonoBehaviour:
   heavyKnockbackpower: {x: 7, y: 7}
   heavyKnockbackDuration: 0.5
   heavyDamageThreshold: 0.3
-  temperatureDropRate: 1
+  temperatureDropRate: 0.1
   frozenHpDropRate: 2
   staminaRegenDelay: 1.5
 --- !u!114 &7035390560572528832
@@ -374,8 +376,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8360229d1327716498e7eb739a6d0525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   PlayerObject: {fileID: 6627346968656088041}
-  inAirMoveMultiplier: 0.7
+  inAirMoveMultiplier: 0.9
+  CrouchColliderSize: {x: 0.5, y: 0.85}
+  CrouchColliderOffset: {x: 0, y: -0.185}
+  OriginalColliderSize: {x: 0, y: 0}
+  OriginalColliderOffset: {x: 0, y: 0}
+  ceilingCheck: {fileID: 7240635460778005447}
+  ceilingCheckRadius: 0.2
+  JumpBufferTime: 0.1
+  CoyoteTime: 0.1
+  MaxFallSpeed: 20
   groundCheck: {fileID: 6888678176120883945}
   groundCheckSize: {x: 0.3, y: 0.1}
   whatIsGround:
@@ -5431,8 +5443,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0.7}
-  m_SizeDelta: {x: 1.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.8}
+  m_SizeDelta: {x: 2, y: 0.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9216212533090838939
 CanvasRenderer:
@@ -5462,7 +5474,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NameNone
+  m_text: NoneName
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5507,7 +5519,7 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
+  m_overflowMode: 1
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_enableKerning: 0
@@ -5559,6 +5571,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: -0.524, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3733507237557569488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8130940939468755037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7240635460778005447}
+  m_Layer: 6
+  m_Name: Crouch Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7240635460778005447
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8130940939468755037}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.015, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

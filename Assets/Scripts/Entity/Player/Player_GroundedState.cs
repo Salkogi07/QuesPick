@@ -23,13 +23,27 @@ public class Player_GroundedState : PlayerState
         }
 
         if (rigidbody.linearVelocity.y < 0)
+        {
             playerStateMachine.ChangeState(player.FallState);
+            return;
+        }
+        
+        if (player.IsCrouchHeld && !player.IsSprintHeld)
+        {
+            // 이동 중이면 CrouchMove, 멈춰있으면 CrouchIdle
+            if (player.MoveInput != 0)
+                playerStateMachine.ChangeState(player.CrouchMoveState);
+            else
+                playerStateMachine.ChangeState(player.CrouchIdleState);
+            
+            return;
+        }
 
         if (player.Condition.CanSprint())
             if (Input.GetKey(KeyManager.instance.GetKeyCodeByName("Sprint")) && player.MoveInput != 0)
                 playerStateMachine.ChangeState(player.RunState);
 
-        if (Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump")))
+        if (player.IsGroundDetected && Input.GetKeyDown(KeyManager.instance.GetKeyCodeByName("Jump")))
             playerStateMachine.ChangeState(player.JumpState);
     }
 }
