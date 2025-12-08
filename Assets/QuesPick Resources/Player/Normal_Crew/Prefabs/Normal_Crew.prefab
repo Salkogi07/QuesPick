@@ -313,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WalkSpeed: 4.5
   RunSpeed: 7
-  CrouchSpeed: 2
+  CrouchSpeed: 1.5
   JumpForce: 13
   SprintCost: 7
   JumpCost: 12
@@ -394,6 +394,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   slopeCheckDistance: 0.5
+  maxSlopeAngle: 45
   noFriction: {fileID: 6200000, guid: cf2b2126212a15e43b67cfe95502d021, type: 2}
   fullFriction: {fileID: 6200000, guid: d38241610bc6a674a92cecf7726c49b1, type: 2}
 --- !u!114 &5677424154355307562
