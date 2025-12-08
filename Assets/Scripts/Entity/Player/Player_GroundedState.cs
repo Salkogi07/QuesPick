@@ -11,18 +11,16 @@ public class Player_GroundedState : PlayerState
     {
         base.Update();
 
-        /*float y = rigidbody.linearVelocity.y;
-        if (Mathf.Abs(y) < 0.0001f)
-            y = 0f;*/
-
-        if (player.IsGroundDetected)
+        // [수정됨] 경사면에 있지 않을 때만 Y속도를 0으로 초기화
+        // 경사면에서는 Y축 이동(오르막/내리막)이 필요하므로 0으로 만들지 않음
+        if (player.IsGroundDetected && !player.IsOnSlope)
         {
             var v = rigidbody.linearVelocity;
             v.y = 0f;
             rigidbody.linearVelocity = v;
         }
 
-        if (rigidbody.linearVelocity.y < 0)
+        if (rigidbody.linearVelocity.y < 0 && !player.IsGroundDetected)
         {
             playerStateMachine.ChangeState(player.FallState);
             return;
@@ -30,7 +28,6 @@ public class Player_GroundedState : PlayerState
         
         if (player.IsCrouchHeld && !player.IsSprintHeld)
         {
-            // 이동 중이면 CrouchMove, 멈춰있으면 CrouchIdle
             if (player.MoveInput != 0)
                 playerStateMachine.ChangeState(player.CrouchMoveState);
             else
