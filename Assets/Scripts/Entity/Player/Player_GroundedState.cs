@@ -20,7 +20,7 @@ public class Player_GroundedState : PlayerState
             rigidbody.linearVelocity = v;
         }
 
-        if (rigidbody.linearVelocity.y < 0 && !player.IsGroundDetected)
+        if (rigidbody.linearVelocity.y < 0 && !player.IsGroundDetected && !player.IsOnSlope)
         {
             playerStateMachine.ChangeState(player.FallState);
             return;
