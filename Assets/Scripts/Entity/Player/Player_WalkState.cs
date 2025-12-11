@@ -21,8 +21,6 @@ public class Player_WalkState : Player_GroundedState
     {
         base.FixedUpdate();
         
-        player.SetMoveSpeed(player.Stats.WalkSpeed);
-        player.SetVelocity(player.MoveInput * player.CurrentSpeed, rigidbody.linearVelocity.y);
+        player.SetGroundVelocity(player.MoveInput, player.Stats.WalkSpeed);
     }
-
 }
